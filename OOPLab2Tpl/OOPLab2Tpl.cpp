@@ -60,8 +60,8 @@ void decrypt(unsigned short rez[8][8], std::string decryptedText[8]) {
 
     for (i = 0; i < 8; i++) {
         for (j = 0; j < 8; j++) {
-            unsigned short r = rez[i][j];
-            unsigned char ascii = r >> 7; // Відокремлюємо ASCII-код
+            unsigned short r = rez[i][j]&011111111000000b;
+            unsigned short ascii = r >> 7; // Відокремлюємо ASCII-код
             decryptedText[i][j] = ascii;
         }
     }
